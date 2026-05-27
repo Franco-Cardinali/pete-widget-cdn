@@ -124,6 +124,14 @@
           <div><strong>Org URL:</strong> https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com</div>
         </div>
       </div>
+      <div style="flex:1; min-width:280px; background:#ede9fe; border:1px solid #a78bfa; border-radius:8px; padding:12px;">
+        <strong style="color:#5b21b6; font-size:13px;">🟣 DEV</strong>
+        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#3b0764;">
+          <div><strong>App ID:</strong> f4a167bf-a498-4145-9bc2-d6e2a8d7a268</div>
+          <div><strong>Org ID:</strong> 40b83434-64c1-ee11-9073-6045bd40d3c4</div>
+          <div><strong>Org URL:</strong> https://m-40b83434-64c1-ee11-9073-6045bd40d3c4.au.omnichannelengagementhub.com</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -131,15 +139,15 @@
     <h2>⚙️ Environment Config</h2>
     <div class="config-row">
       <label>App ID</label>
-      <input type="text" id="cfg-app-id" value="ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67" />
+      <input type="text" id="cfg-app-id" value="f4a167bf-a498-4145-9bc2-d6e2a8d7a268" />
     </div>
     <div class="config-row">
       <label>Org ID</label>
-      <input type="text" id="cfg-org-id" value="f3f3b731-7bd7-ee11-9049-002248e341c8" />
+      <input type="text" id="cfg-org-id" value="40b83434-64c1-ee11-9073-6045bd40d3c4" />
     </div>
     <div class="config-row">
       <label>Org URL</label>
-      <input type="text" id="cfg-org-url" value="https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com" />
+      <input type="text" id="cfg-org-url" value="https://m-40b83434-64c1-ee11-9073-6045bd40d3c4.au.omnichannelengagementhub.com" />
     </div>
     <button id="config-apply">Apply & Reload Widget</button>
     <span id="config-status">✓ Applied — page reloading</span>
@@ -245,9 +253,9 @@
       const s = document.createElement('script');
       s.id = 'pete-custom-widget';
       s.src = 'pete-widget.js';
-      s.setAttribute('data-app-id', cfg ? cfg.appId : 'ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67');
-      s.setAttribute('data-org-id', cfg ? cfg.orgId : 'f3f3b731-7bd7-ee11-9049-002248e341c8');
-      s.setAttribute('data-org-url', cfg ? cfg.orgUrl : 'https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com');
+      s.setAttribute('data-app-id', cfg ? cfg.appId : 'f4a167bf-a498-4145-9bc2-d6e2a8d7a268');
+      s.setAttribute('data-org-id', cfg ? cfg.orgId : '40b83434-64c1-ee11-9073-6045bd40d3c4');
+      s.setAttribute('data-org-url', cfg ? cfg.orgUrl : 'https://m-40b83434-64c1-ee11-9073-6045bd40d3c4.au.omnichannelengagementhub.com');
       s.setAttribute('data-source', 'Public Trust');
       document.body.appendChild(s);
     })();
