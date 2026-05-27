@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pete Widget — PRE-PROD Test</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    .env-badge { display: inline-block; padding: 6px 14px; background: #f59e0b; color: #fff; border-radius: 4px; font-weight: 600; font-size: 14px; margin-bottom: 12px; }
+    h1 { margin: 0 0 8px; font-size: 20px; }
+    p { color: #555; margin: 0 0 16px; font-size: 13px; }
+
+    .config-panel {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .config-panel h2 { margin: 0 0 12px; font-size: 14px; font-weight: 600; color: #333; }
+    .config-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
+      align-items: center;
+    }
+    .config-row label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      width: 70px;
+      flex-shrink: 0;
+    }
+    .config-row input {
+      flex: 1;
+      padding: 6px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    .config-row input:focus { border-color: #f59e0b; outline: none; }
+    #config-apply {
+      padding: 8px 16px;
+      background: #f59e0b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    #config-apply:hover { background: #d97706; }
+    #config-status { font-size: 11px; color: #22c55e; margin-left: 12px; display: none; }
+
+    .console-panel {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 16px;
+      max-width: calc(100% - 420px);
+      height: 500px;
+      overflow-y: auto;
+      overflow-x: auto;
+      font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      border: 1px solid #333;
+      margin-bottom: 600px;
+    }
+    .console-panel::-webkit-scrollbar { width: 8px; }
+    .console-panel::-webkit-scrollbar-track { background: #1e1e1e; }
+    .console-panel::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+    .console-line { margin: 0; white-space: pre-wrap; word-break: break-all; }
+    .console-line.log { color: #4ec9b0; }
+    .console-line.error { color: #f44747; }
+    .console-line.warn { color: #ce9178; }
+    .console-line.info { color: #9cdcfe; }
+    .console-clear {
+      font-size: 12px;
+      color: #fff;
+      background: #dc2626;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .console-clear:hover { background: #b91c1c; }
+  </style>
+</head>
+<body>
+  <div class="env-badge">PRE-PRODUCTION</div>
+  <h1>Pete Widget Test — Pre-Production</h1>
+  <p>Click Pete to start. Say "talk to human" to test Adaptive Card. Change IDs below and click Apply to test different environments.</p>
+
+  <div style="max-width:700px;">
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+      <div style="flex:1; min-width:280px; background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:12px;">
+        <strong style="color:#166534; font-size:13px;">🟢 PROD</strong>
+        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#14532d;">
+          <div><strong>App ID:</strong> 75e19ac0-ce8a-46cb-8ff2-bf62c3140b68</div>
+          <div><strong>Org ID:</strong> fdb344ac-5ae6-ee11-a1f8-000d3a79deca</div>
+          <div><strong>Org URL:</strong> https://m-fdb344ac-5ae6-ee11-a1f8-000d3a79deca.au.omnichannelengagementhub.com</div>
+        </div>
+      </div>
+      <div style="flex:1; min-width:280px; background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:12px;">
+        <strong style="color:#9a3412; font-size:13px;">🟠 PRE-PROD</strong>
+        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#7c2d12;">
+          <div><strong>App ID:</strong> ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67</div>
+          <div><strong>Org ID:</strong> f3f3b731-7bd7-ee11-9049-002248e341c8</div>
+          <div><strong>Org URL:</strong> https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config-panel" style="max-width:700px; box-sizing:border-box;">
+    <h2>⚙️ Environment Config</h2>
+    <div class="config-row">
+      <label>App ID</label>
+      <input type="text" id="cfg-app-id" value="ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67" />
+    </div>
+    <div class="config-row">
+      <label>Org ID</label>
+      <input type="text" id="cfg-org-id" value="f3f3b731-7bd7-ee11-9049-002248e341c8" />
+    </div>
+    <div class="config-row">
+      <label>Org URL</label>
+      <input type="text" id="cfg-org-url" value="https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com" />
+    </div>
+    <button id="config-apply">Apply & Reload Widget</button>
+    <span id="config-status">✓ Applied — page reloading</span>
+  </div>
+
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+    <h2 style="font-size:14px; margin:0; color:#333;">📋 Console Output</h2>
+    <button class="console-clear" id="console-clear">Clear</button>
+  </div>
+  <div class="console-panel" id="console-output"></div>
+
+  <!-- Intercept console before widget loads -->
+  <script>
+    (function() {
+      const panel = document.getElementById('console-output');
+      const orig = { log: console.log, error: console.error, warn: console.warn, info: console.info };
+
+      function addLine(type, args) {
+        const line = document.createElement('div');
+        line.className = 'console-line ' + type;
+        line.textContent = Array.from(args).map(a => {
+          if (typeof a === 'object') try { return JSON.stringify(a, null, 2); } catch(e) { return String(a); }
+          return String(a);
+        }).join(' ');
+        panel.appendChild(line);
+        panel.scrollTop = panel.scrollHeight;
+      }
+
+      console.log = function() { orig.log.apply(console, arguments); addLine('log', arguments); };
+      console.error = function() { orig.error.apply(console, arguments); addLine('error', arguments); };
+      console.warn = function() { orig.warn.apply(console, arguments); addLine('warn', arguments); };
+      console.info = function() { orig.info.apply(console, arguments); addLine('info', arguments); };
+
+      // Catch network errors (Failed to load resource) and unhandled promise rejections
+      window.addEventListener('error', function(e) {
+        if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK' || e.target.tagName === 'IMG')) {
+          addLine('error', ['[Network] Failed to load: ' + (e.target.src || e.target.href)]);
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        addLine('error', ['[Unhandled Promise] ' + (e.reason && e.reason.message ? e.reason.message : String(e.reason))]);
+      });
+
+      // Override XMLHttpRequest to catch failed requests
+      const origOpen = XMLHttpRequest.prototype.open;
+      const origSend = XMLHttpRequest.prototype.send;
+      XMLHttpRequest.prototype.open = function(method, url) {
+        this._peteUrl = url;
+        this._peteMethod = method;
+        return origOpen.apply(this, arguments);
+      };
+      XMLHttpRequest.prototype.send = function() {
+        this.addEventListener('error', function() {
+          addLine('error', ['[XHR FAILED] ' + this._peteMethod + ' ' + this._peteUrl + ' — net::ERR (network error)']);
+        });
+        this.addEventListener('load', function() {
+          if (this.status >= 400) {
+            addLine('error', ['[XHR ' + this.status + '] ' + this._peteMethod + ' ' + this._peteUrl]);
+          }
+        });
+        return origSend.apply(this, arguments);
+      };
+
+      document.getElementById('console-clear').addEventListener('click', function() { panel.innerHTML = ''; });
+
+      // Config apply — reload page with updated script attributes
+      document.getElementById('config-apply').addEventListener('click', function() {
+        const appId = document.getElementById('cfg-app-id').value.trim();
+        const orgId = document.getElementById('cfg-org-id').value.trim();
+        const orgUrl = document.getElementById('cfg-org-url').value.trim();
+        if (!appId || !orgId || !orgUrl) { alert('All fields required'); return; }
+        // Store in sessionStorage and reload
+        sessionStorage.setItem('pete-cfg', JSON.stringify({ appId, orgId, orgUrl }));
+        document.getElementById('config-status').style.display = 'inline';
+        setTimeout(() => location.reload(), 300);
+      });
+
+      // On load, check sessionStorage for overrides
+      const saved = sessionStorage.getItem('pete-cfg');
+      if (saved) {
+        const cfg = JSON.parse(saved);
+        document.getElementById('cfg-app-id').value = cfg.appId;
+        document.getElementById('cfg-org-id').value = cfg.orgId;
+        document.getElementById('cfg-org-url').value = cfg.orgUrl;
+      }
+    })();
+  </script>
+
+  <!-- Widget script — loaded externally for local testing -->
+  <script>
+    (function() {
+      const saved = sessionStorage.getItem('pete-cfg');
+      const cfg = saved ? JSON.parse(saved) : null;
+      const s = document.createElement('script');
+      s.id = 'pete-custom-widget';
+      s.src = 'pete-widget.js';
+      s.setAttribute('data-app-id', cfg ? cfg.appId : 'ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67');
+      s.setAttribute('data-org-id', cfg ? cfg.orgId : 'f3f3b731-7bd7-ee11-9049-002248e341c8');
+      s.setAttribute('data-org-url', cfg ? cfg.orgUrl : 'https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com');
+      s.setAttribute('data-source', 'Public Trust');
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
