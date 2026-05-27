@@ -106,30 +106,36 @@
   <h1>Pete Widget — Dev Console</h1>
   <p>Click Pete to start. Say "talk to human" to test Adaptive Card. Change IDs below and click Apply to test different environments.</p>
 
-  <div style="max-width:700px;">
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
-      <div style="flex:1; min-width:280px; background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:12px;">
-        <strong style="color:#166534; font-size:13px;">🟢 PROD</strong>
-        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#14532d;">
-          <div><strong>App ID:</strong> 75e19ac0-ce8a-46cb-8ff2-bf62c3140b68</div>
-          <div><strong>Org ID:</strong> fdb344ac-5ae6-ee11-a1f8-000d3a79deca</div>
-          <div><strong>Org URL:</strong> https://m-fdb344ac-5ae6-ee11-a1f8-000d3a79deca.au.omnichannelengagementhub.com</div>
+  <div style="max-width:1050px;">
+    <div style="display:flex; gap:10px; margin-bottom:12px;">
+      <div style="flex:1; background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#166534; font-size:13px;">🟢 PROD</strong>
+          <button onclick="useEnv('75e19ac0-ce8a-46cb-8ff2-bf62c3140b68','fdb344ac-5ae6-ee11-a1f8-000d3a79deca','https://m-fdb344ac-5ae6-ee11-a1f8-000d3a79deca.au.omnichannelengagementhub.com')" style="padding:4px 10px; background:#166534; color:#fff; border:none; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">Use</button>
+        </div>
+        <div style="font-family:monospace; font-size:10px; margin-top:6px; line-height:1.6; color:#14532d; word-break:break-all;">
+          <div><strong>App:</strong> 75e19ac0-ce8a-46cb-8ff2-bf62c3140b68</div>
+          <div><strong>Org:</strong> fdb344ac-5ae6-ee11-a1f8-000d3a79deca</div>
         </div>
       </div>
-      <div style="flex:1; min-width:280px; background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:12px;">
-        <strong style="color:#9a3412; font-size:13px;">🟠 PRE-PROD</strong>
-        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#7c2d12;">
-          <div><strong>App ID:</strong> ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67</div>
-          <div><strong>Org ID:</strong> f3f3b731-7bd7-ee11-9049-002248e341c8</div>
-          <div><strong>Org URL:</strong> https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com</div>
+      <div style="flex:1; background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#9a3412; font-size:13px;">🟠 PRE-PROD</strong>
+          <button onclick="useEnv('ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67','f3f3b731-7bd7-ee11-9049-002248e341c8','https://m-f3f3b731-7bd7-ee11-9049-002248e341c8.au.omnichannelengagementhub.com')" style="padding:4px 10px; background:#9a3412; color:#fff; border:none; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">Use</button>
+        </div>
+        <div style="font-family:monospace; font-size:10px; margin-top:6px; line-height:1.6; color:#7c2d12; word-break:break-all;">
+          <div><strong>App:</strong> ac5a057d-82bb-4b82-9c72-3fbc0e8c8d67</div>
+          <div><strong>Org:</strong> f3f3b731-7bd7-ee11-9049-002248e341c8</div>
         </div>
       </div>
-      <div style="flex:1; min-width:280px; background:#ede9fe; border:1px solid #a78bfa; border-radius:8px; padding:12px;">
-        <strong style="color:#5b21b6; font-size:13px;">🟣 DEV</strong>
-        <div style="font-family:monospace; font-size:11px; margin-top:6px; line-height:1.7; color:#3b0764;">
-          <div><strong>App ID:</strong> f4a167bf-a498-4145-9bc2-d6e2a8d7a268</div>
-          <div><strong>Org ID:</strong> 40b83434-64c1-ee11-9073-6045bd40d3c4</div>
-          <div><strong>Org URL:</strong> https://m-40b83434-64c1-ee11-9073-6045bd40d3c4.au.omnichannelengagementhub.com</div>
+      <div style="flex:1; background:#ede9fe; border:1px solid #a78bfa; border-radius:8px; padding:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="color:#5b21b6; font-size:13px;">🟣 DEV</strong>
+          <button onclick="useEnv('f4a167bf-a498-4145-9bc2-d6e2a8d7a268','40b83434-64c1-ee11-9073-6045bd40d3c4','https://m-40b83434-64c1-ee11-9073-6045bd40d3c4.au.omnichannelengagementhub.com')" style="padding:4px 10px; background:#5b21b6; color:#fff; border:none; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer;">Use</button>
+        </div>
+        <div style="font-family:monospace; font-size:10px; margin-top:6px; line-height:1.6; color:#3b0764; word-break:break-all;">
+          <div><strong>App:</strong> f4a167bf-a498-4145-9bc2-d6e2a8d7a268</div>
+          <div><strong>Org:</strong> 40b83434-64c1-ee11-9073-6045bd40d3c4</div>
         </div>
       </div>
     </div>
@@ -210,6 +216,16 @@
           }
         });
         return origSend.apply(this, arguments);
+      };
+
+      // "Use" button helper — fills config inputs and saves
+      window.useEnv = function(appId, orgId, orgUrl) {
+        document.getElementById('cfg-app-id').value = appId;
+        document.getElementById('cfg-org-id').value = orgId;
+        document.getElementById('cfg-org-url').value = orgUrl;
+        sessionStorage.setItem('pete-cfg', JSON.stringify({ appId, orgId, orgUrl }));
+        document.getElementById('config-status').style.display = 'inline';
+        setTimeout(() => location.reload(), 300);
       };
 
       document.getElementById('console-clear').addEventListener('click', function() { panel.innerHTML = ''; });
